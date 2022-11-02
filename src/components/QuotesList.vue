@@ -39,7 +39,7 @@ onBeforeRouteUpdate(loadQuotes);
 </script>
 
 <template>
-  <ul class="quotes-list">
+  <ul class="quotes-list" style="overflow-y: scroll">
     <li
       v-for="quote in quotes"
       :key="quote.id"

@@ -18,7 +18,7 @@ onBeforeMount(async () => {
 </script>
 
 <template>
-  <div class="greetings">
+  <div class="single-supplier">
     <h2>{{ supplierName }}</h2>
     <p>{{ supplierDescription }}</p>
   </div>
