@@ -39,40 +39,48 @@ const handlePasswordInput = (event: Event) => {
 </script>
 
 <template>
-  <div class="login-form">
-    <form @submit.prevent.stop="handleSubmit">
-      <div class="mb-3">
-        <label for="user" class="form-label">User Name / Email</label>
+  <div class="login-form card flex-grow-1">
+    <div class="card-body">
+      <form @submit.prevent.stop="handleSubmit">
+        <div class="mb-3">
+          <label for="user" class="form-label">User Name / Email</label>
 
-        <input
-          id="user"
-          class="form-control"
-          type="text"
-          placeholder="Enter your username"
-          @input="handleUserInput"
-        />
-      </div>
+          <input
+            id="user"
+            class="form-control"
+            type="text"
+            placeholder="Enter your username"
+            @input="handleUserInput"
+          />
+        </div>
 
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input
-          type="password"
-          id="password"
-          class="form-control"
-          placeholder="Enter your password"
-          @input="handlePasswordInput"
-        />
-      </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Enter your password"
+            @input="handlePasswordInput"
+          />
+        </div>
 
-      <div class="mb-3">
-        <button
-          type="submit"
-          class="btn btn-secondary"
-          :disabled="!user || !password"
-        >
-          Login
-        </button>
-      </div>
-    </form>
+        <div class="mb-3">
+          <button
+            type="submit"
+            class="btn btn-secondary"
+            :disabled="!user || !password"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
+
+<style>
+.login-form.card {
+  max-width: 50%;
+}
+</style>
