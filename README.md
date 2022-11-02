@@ -6,7 +6,7 @@
 
 - No tests have been created, unit, integration and E2E tests should be added
 - Styles: imported bootstrap from CDN and the minimum has been done to give a basic nice look and feel. Style could be greatly improved
-- Responsivity: the app is not optimised for smaller devices 
+- Responsivity: the app is not optimised for smaller devices, especially navigation should be improved
 - Security: token is stored in local storage, this make the app vulnerable to xss attacks, http-only cookie would be the best approach
 - Error handling: a 404 page could be created, form errors could be handled with a UI feedback
 - Accessibility: aria tags should be added for best accessibility
@@ -16,7 +16,15 @@
 ### Highlights
 
 - Swagger generated JSON is used to create typescript types
-- Is possible to generate types by running `npm run generate-schema`
+- Is possible to generate types by running `npm run generate-schema` (a swagger.json file must be located in the project root)
+- A route-based pagination has been added
+
+### Components Structure
+
+The application follows a standard components structure:
+- The “views” directory contain routes entry points
+- The “components” directory contains lower-level components like forms, navigation etc..
+
 
 ## Basic Setup Information
 
