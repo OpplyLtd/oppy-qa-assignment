@@ -27,7 +27,7 @@ onBeforeRouteUpdate(loadSuppliers);
 </script>
 
 <template>
-  <div class="greetings">
+  <div class="suppliers-list">
     <ul class="suppliers list-group list-group-flush">
       <li
         v-for="supplier in suppliers"

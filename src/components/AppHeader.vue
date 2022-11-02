@@ -1,11 +1,10 @@
 <script setup lang="ts">
-import { RouterLink, useRoute } from "vue-router";
+import { onBeforeRouteUpdate, RouterLink, useRoute } from "vue-router";
 
 import { isLoggedIn, logoutUser } from "@/util/userStatus";
 import router from "@/router";
-import { onMounted } from "vue";
 
-onMounted(() => {
+onBeforeRouteUpdate(() => {
   const route = useRoute();
 
   console.log(route.name);
@@ -41,7 +40,10 @@ const logout = async () => {
               id="navbarNav"
             >
               <ul class="navbar-nav">
-                <li class="nav-item">
+                <li
+                  class="nav-item"
+                  :class="$route.name === 'Home' ? 'active' : ''"
+                >
                   <RouterLink to="/" class="nav-link">Home</RouterLink>
                 </li>
 
@@ -54,14 +56,12 @@ const logout = async () => {
                   <RouterLink to="/quotes" class="nav-link">Quotes</RouterLink>
                 </li>
 
-                <li v-if="isLoggedIn" class="nav-item">
-                  <a href="#" @click.prevent="logout" class="nav-link"
-                    >Logout</a
-                  >
-                </li>
-                <li v-else class="nav-item">
-                  <RouterLink to="/login" class="nav-link">Login</RouterLink>
-                </li>
+                <a
+                  href="#"
+                  @click.prevent="logout"
+                  class="nav-link text-secondary"
+                  >Logout</a
+                >
               </ul>
             </div>
           </nav>
@@ -74,9 +74,13 @@ const logout = async () => {
 <style scoped lang="scss">
 nav {
   .navbar-nav {
-    li {
-      a {
-        color: white !important;
+    li.nav-item {
+      a.nav-link {
+        color: white;
+
+        &.router-link-active {
+          color: var(--bs-yellow);
+        }
       }
     }
   }

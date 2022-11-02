@@ -12,7 +12,7 @@ const {
 </script>
 
 <template>
-  <div class="submit-form card flex-grow-1">
+  <div class="signup-form card flex-grow-1">
     <div class="card-body">
       <form @submit.prevent.stop="handleSubmit">
         <div class="mb-3">
