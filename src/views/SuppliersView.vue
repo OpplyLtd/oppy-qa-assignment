@@ -4,6 +4,7 @@ import SuppliersList from "@/components/SuppliersList.vue";
 
 <template>
   <div class="greetings">
+    <h1 class="text-success align-center text-center mb-3">Suppliers</h1>
     <SuppliersList />
   </div>
 </template>

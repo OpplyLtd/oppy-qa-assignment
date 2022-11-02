@@ -6,12 +6,18 @@ import QuotesView from "../views/QuotesView.vue";
 import LoginView from "../views/LoginView.vue";
 import SignupView from "../views/SignupView.vue";
 import SingleSupplierView from "../views/SingleSupplierView.vue";
+import AppHome from "../views/AppHome.vue";
 
 import { redirectToLogin } from "@/router/guards/redirectToLogin";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    {
+      path: "/",
+      name: "Home",
+      component: AppHome,
+    },
     {
       path: "/suppliers/:page?",
       name: "Suppliers",
