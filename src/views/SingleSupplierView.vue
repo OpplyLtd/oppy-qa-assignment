@@ -4,7 +4,7 @@ import SingleSupplier from "@/components/SingleSupplier.vue";
 
 <template>
   <div class="greetings">
-    <h1 class="green">View Supplier</h1>
+    <h1 class="text-success align-center text-center mb-3">View Supplier</h1>
     <SingleSupplier />
   </div>
 </template>

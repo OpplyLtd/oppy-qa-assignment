@@ -1,8 +1,15 @@
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
+import { RouterLink, useRoute } from "vue-router";
 
 import { isLoggedIn, logoutUser } from "@/util/userStatus";
 import router from "@/router";
+import { onMounted } from "vue";
+
+onMounted(() => {
+  const route = useRoute();
+
+  console.log(route.name);
+});
 
 const logout = async () => {
   logoutUser();
@@ -12,13 +19,10 @@ const logout = async () => {
 </script>
 
 <template>
-  <header>
+  <header v-if="isLoggedIn">
     <div class="row">
       <div class="col">
         <div class="content">
-          <div class="row">
-            <div class="col"></div>
-          </div>
           <nav class="navbar navbar-expand-lg fixed-top p-0">
             <button
               class="navbar-toggler"
@@ -38,6 +42,10 @@ const logout = async () => {
             >
               <ul class="navbar-nav">
                 <li class="nav-item">
+                  <RouterLink to="/" class="nav-link">Home</RouterLink>
+                </li>
+
+                <li class="nav-item">
                   <RouterLink to="/suppliers" class="nav-link"
                     >Suppliers</RouterLink
                   >
@@ -45,6 +53,7 @@ const logout = async () => {
                 <li class="nav-item">
                   <RouterLink to="/quotes" class="nav-link">Quotes</RouterLink>
                 </li>
+
                 <li v-if="isLoggedIn" class="nav-item">
                   <a href="#" @click.prevent="logout" class="nav-link"
                     >Logout</a
