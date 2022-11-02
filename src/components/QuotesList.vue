@@ -49,8 +49,8 @@ onBeforeRouteUpdate(loadQuotes);
         <h3 class="card-title h4">{{ quote.title }}</h3>
         <ul class="list-group-flush">
           <li class="list-group-item">Amount: {{ quote.amount }}</li>
-          <li class="list-group-item">
-            Created: {{ formatDate(quote.created) }}
+          <li class="list-group-item" v-if="quote.created">
+            Created: {{ quote.created && formatDate(quote.created) }}
           </li>
         </ul>
       </div>

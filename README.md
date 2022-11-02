@@ -5,7 +5,8 @@
 ### Possible improvements
 
 - No tests have been created, unit, integration and E2E tests should be added
-- Style: imported bootstrap from CDN and the minimum has been done to give a basic nice look and feel
+- Styles: imported bootstrap from CDN and the minimum has been done to give a basic nice look and feel. Style could be greatly improved
+- Responsivity: the app is not optimised for smaller devices 
 - Security: token is stored in local storage, this make the app vulnerable to xss attacks, http-only cookie would be the best approach
 - Error handling: a 404 page could be created, form errors could be handled with a UI feedback
 - Accessibility: aria tags should be added for best accessibility

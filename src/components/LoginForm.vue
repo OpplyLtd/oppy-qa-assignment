@@ -24,6 +24,17 @@ const handleSubmit = async () => {
   loginUser(authToken.token);
 
   await router.push({ name: "Suppliers" });
+  router.go(0);
+};
+
+const handleUserInput = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  user.value = target.value;
+};
+
+const handlePasswordInput = (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  password.value = target.value;
 };
 </script>
 
@@ -38,7 +49,7 @@ const handleSubmit = async () => {
           class="form-control"
           type="text"
           placeholder="Enter your username"
-          @input="user = $event.target.value"
+          @input="handleUserInput"
         />
       </div>
 
@@ -49,7 +60,7 @@ const handleSubmit = async () => {
           id="password"
           class="form-control"
           placeholder="Enter your password"
-          @input="password = $event.target.value"
+          @input="handlePasswordInput"
         />
       </div>
 

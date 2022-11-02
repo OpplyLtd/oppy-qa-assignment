@@ -2,12 +2,12 @@
 import { useSignupForm } from "@/composables";
 
 const {
-  firstName,
-  lastName,
-  email,
-  password,
   isSubmitButtonDisabled,
   handleSubmit,
+  handleFirstNameInput,
+  handleLastNameInput,
+  handleEmailInput,
+  handlePasswordInput,
 } = useSignupForm();
 </script>
 
@@ -19,7 +19,7 @@ const {
           class="form-control"
           type="text"
           placeholder="First Name"
-          @input="firstName = $event.target.value"
+          @input="handleFirstNameInput"
         />
       </div>
       <div class="mb-3">
@@ -27,7 +27,7 @@ const {
           class="form-control"
           type="text"
           placeholder="Last Name"
-          @input="lastName = $event.target.value"
+          @input="handleLastNameInput"
         />
       </div>
       <div class="mb-3">
@@ -35,7 +35,7 @@ const {
           class="form-control"
           type="text"
           placeholder="email"
-          @input="email = $event.target.value"
+          @input="handleEmailInput"
         />
       </div>
       <div class="mb-3">
@@ -43,7 +43,7 @@ const {
           class="form-control"
           type="password"
           placeholder="Password"
-          @input="password = $event.target.value"
+          @input="handlePasswordInput"
         />
       </div>
 
