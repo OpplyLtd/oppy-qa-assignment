@@ -6,7 +6,7 @@ import AppHeader from "@/components/AppHeader.vue";
 </script>
 
 <template>
-  <div class="container">
+  <div>
     <AppHeader />
     <main>
       <div class="row">
