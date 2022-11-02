@@ -3,6 +3,7 @@ import { onBeforeRouteUpdate, RouterLink, useRoute } from "vue-router";
 
 import { isLoggedIn, logoutUser } from "@/util/userStatus";
 import router from "@/router";
+import { computed } from "vue";
 
 onBeforeRouteUpdate(() => {
   const route = useRoute();
@@ -40,20 +41,30 @@ const logout = async () => {
               id="navbarNav"
             >
               <ul class="navbar-nav">
-                <li
-                  class="nav-item"
-                  :class="$route.name === 'Home' ? 'active' : ''"
-                >
-                  <RouterLink to="/" class="nav-link">Home</RouterLink>
+                <li class="nav-item">
+                  <RouterLink
+                    to="/"
+                    class="nav-link"
+                    :class="$route.name === 'Home' ? 'active' : ''"
+                    >Home</RouterLink
+                  >
                 </li>
 
                 <li class="nav-item">
-                  <RouterLink to="/suppliers" class="nav-link"
+                  <RouterLink
+                    to="/suppliers"
+                    class="nav-link"
+                    :class="$route.name === 'Suppliers' ? 'active' : ''"
                     >Suppliers</RouterLink
                   >
                 </li>
                 <li class="nav-item">
-                  <RouterLink to="/quotes" class="nav-link">Quotes</RouterLink>
+                  <RouterLink
+                    to="/quotes"
+                    class="nav-link"
+                    :class="$route.name === 'Quotes' ? 'active' : ''"
+                    >Quotes</RouterLink
+                  >
                 </li>
 
                 <a
@@ -78,7 +89,7 @@ nav {
       a.nav-link {
         color: white;
 
-        &.router-link-active {
+        &.active {
           color: var(--bs-yellow);
         }
       }

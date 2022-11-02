@@ -3,6 +3,7 @@ import type { Ref } from "vue";
 import { useRoute } from "vue-router";
 
 import router from "@/router";
+import { ROUTES_WITH_PAGINATION } from "@/constants";
 
 /**
  * The current page.
@@ -61,6 +62,11 @@ export const usePagination = () => {
     }
   };
 
+  const routeHasPagination = computed(() => {
+    const routeName = route.name as string;
+    return ROUTES_WITH_PAGINATION.includes(routeName);
+  });
+
   onBeforeMount(() => {
     page.value = getCurrentPage.value;
   });
@@ -80,5 +86,6 @@ export const usePagination = () => {
     setTotalRecords,
     goToPage,
     setBaseRoute,
+    routeHasPagination,
   };
 };
