@@ -13,6 +13,15 @@
   --bs-pagination-disabled-bg: var(--bs-gray);
   --bs-pagination-disabled-color: var(--bs-white);
   --bs-pagination-disabled-border-color: var(--bs-gray);
+
+
+}
+
+.btn-primary {
+  --bs-btn-disabled-bg: var(--bs-gray-600);
+  --bs-btn-disabled-border-color: var(--bs-gray-600);
+  --bs-btn-bg: var(--bs-teal);
+  --bs-btn-border-color: var(--bs-teal);
 }
 
 body {

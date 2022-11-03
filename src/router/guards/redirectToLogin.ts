@@ -8,7 +8,7 @@ export const redirectToLogin: NavigationGuard = (to, from, next) => {
   }
 
   if (!isLoggedIn.value) {
-    next({ name: "Login" });
+    return next({ name: "Login" });
   }
 
   next();
