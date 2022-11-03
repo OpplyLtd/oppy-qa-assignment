@@ -68,7 +68,7 @@ const handlePasswordInput = (event: Event) => {
         <div class="mb-3">
           <button
             type="submit"
-            class="btn btn-secondary"
+            class="btn btn-primary"
             :disabled="!user || !password"
           >
             Login
@@ -79,8 +79,10 @@ const handlePasswordInput = (event: Event) => {
   </div>
 </template>
 
-<style>
-.login-form.card {
-  max-width: 50%;
+<style lang="scss">
+@media only screen and (min-width: 992px) {
+  .login-form.card {
+    max-width: 50%;
+  }
 }
 </style>

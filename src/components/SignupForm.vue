@@ -58,7 +58,7 @@ const {
 
         <div class="bmb-3">
           <button
-            class="btn btn-secondary"
+            class="btn btn-primary"
             type="submit"
             :disabled="isSubmitButtonDisabled"
           >
@@ -71,7 +71,9 @@ const {
 </template>
 
 <style>
-.submit-form.card {
-  max-width: 50%;
+@media only screen and (min-width: 992px) {
+  .signup-form.card {
+    max-width: 50%;
+  }
 }
 </style>
