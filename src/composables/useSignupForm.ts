@@ -40,26 +40,6 @@ export const useSignupForm = () => {
     router.go(0);
   };
 
-  const handleFirstNameInput = (event: Event) => {
-    const target = event.target as HTMLInputElement;
-    firstName.value = target.value;
-  };
-
-  const handleLastNameInput = (event: Event) => {
-    const target = event.target as HTMLInputElement;
-    lastName.value = target.value;
-  };
-
-  const handleEmailInput = (event: Event) => {
-    const target = event.target as HTMLInputElement;
-    email.value = target.value;
-  };
-
-  const handlePasswordInput = (event: Event) => {
-    const target = event.target as HTMLInputElement;
-    password.value = target.value;
-  };
-
   return {
     firstName,
     lastName,
@@ -67,9 +47,5 @@ export const useSignupForm = () => {
     password,
     isSubmitButtonDisabled,
     handleSubmit,
-    handleFirstNameInput,
-    handleLastNameInput,
-    handleEmailInput,
-    handlePasswordInput,
   };
 };
