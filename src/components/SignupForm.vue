@@ -4,10 +4,10 @@ import { useSignupForm } from "@/composables";
 const {
   isSubmitButtonDisabled,
   handleSubmit,
-  handleFirstNameInput,
-  handleLastNameInput,
-  handleEmailInput,
-  handlePasswordInput,
+  firstName,
+  lastName,
+  email,
+  password,
 } = useSignupForm();
 </script>
 
@@ -22,7 +22,7 @@ const {
             class="form-control"
             type="text"
             placeholder="Enter your first name"
-            @input="handleFirstNameInput"
+            v-model="firstName"
           />
         </div>
         <div class="mb-3">
@@ -32,7 +32,7 @@ const {
             class="form-control"
             type="text"
             placeholder="Enter your last name"
-            @input="handleLastNameInput"
+            v-model="lastName"
           />
         </div>
         <div class="mb-3">
@@ -42,7 +42,7 @@ const {
             class="form-control"
             type="text"
             placeholder="Enter your email"
-            @input="handleEmailInput"
+            v-model="email"
           />
         </div>
         <div class="mb-3">
@@ -52,7 +52,7 @@ const {
             class="form-control"
             type="password"
             placeholder="Enter a password"
-            @input="handlePasswordInput"
+            v-model="password"
           />
         </div>
 

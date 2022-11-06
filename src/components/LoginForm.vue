@@ -26,16 +26,6 @@ const handleSubmit = async () => {
   await router.push({ name: "Suppliers" });
   router.go(0);
 };
-
-const handleUserInput = (event: Event) => {
-  const target = event.target as HTMLInputElement;
-  user.value = target.value;
-};
-
-const handlePasswordInput = (event: Event) => {
-  const target = event.target as HTMLInputElement;
-  password.value = target.value;
-};
 </script>
 
 <template>
@@ -50,7 +40,7 @@ const handlePasswordInput = (event: Event) => {
             class="form-control"
             type="text"
             placeholder="Enter your username"
-            @input="handleUserInput"
+            v-model="user"
           />
         </div>
 
@@ -61,7 +51,7 @@ const handlePasswordInput = (event: Event) => {
             id="password"
             class="form-control"
             placeholder="Enter your password"
-            @input="handlePasswordInput"
+            v-model="password"
           />
         </div>
 
